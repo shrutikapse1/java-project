@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Started executing declarative pipeline...'
+                echo 'Building the Project..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing the project..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project....'
+            }
+        }
+    }
+}
