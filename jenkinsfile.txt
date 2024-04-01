@@ -1,22 +1,15 @@
 pipeline {
-    agent any
+ agent any
+ environment{
+SSH_Pass=credentials ('ShrutiKapse_SSH')
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Started executing declarative pipeline...'
-                echo 'Building the Project..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing the project..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the project....'
-            }
-        }
-    }
+}
+ stages {
+ stage('SSH_Pass') {
+ steps {
+ bat "echo 'SSH Password is $SSH_Pass'"
+
+ }
+ }
+ }
 }
